@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulasi Edukasi - Phishing Awareness</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --danger-color: #c00000;
+            --warning-color: #ffcc00;
+            --success-bg: #e2f0d9;
+            --success-border: #385723;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid #e1e4e8;
+        }
+
+        .academic-banner {
+            background-color: var(--warning-color);
+            color: #000000;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        /* Form Styling */
+        h2 {
+            margin-bottom: 10px;
+            color: #222;
+            font-size: 24px;
+        }
+
+        p.alert-text {
+            color: var(--danger-color);
+            font-size: 13px;
+            font-weight: 600;
+            background-color: #fff0f0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--danger-color);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #555;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: border-color 0.2s;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #004085;
+        }
+
+        /* Edukasi Section Styling */
+        .edukasi-section {
+            display: none;
+            text-align: left;
+        }
+
+        .alert-header {
+            color: var(--danger-color);
+            font-size: 20px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f8d7da;
+            padding-bottom: 5px;
+        }
+
+        .captured-box {
+            background-color: #f8f9fa;
+            border: 1px dashed #ccc;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .materi-box {
+            background-color: var(--success-bg);
+            border-left: 5px solid var(--success-border);
+            padding: 15px;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 20px;
+        }
+
+        .materi-box h4 {
+            color: var(--success-border);
+            margin-bottom: 8px;
+        }
+
+        .materi-box ul {
+            padding-left: 20px;
+            font-size: 14px;
+        }
+
+        .materi-box li {
+            margin-bottom: 6px;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--success-border);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="academic-banner">⚠️ PROYEK AKADEMIK: SIMULASI EDUKASI MANDIRI</div>
+    
+    <div class="card-body">
+        <div id="panel-login">
+            <h2>Verifikasi Akun Anda</h2>
+            <p class="alert-text">Pesan: Akun Anda akan dinonaktifkan hari ini. Klik tombol di bawah untuk verifikasi! [cite: 219]</p>
+            
+            <div class="form-group">
+                <label for="username">ID Pengguna / Email</label>
+                <input type="text" id="username" placeholder="Masukkan nama pengguna atau email" autocomplete="off">
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Kata Sandi (Password)</label>
+                <input type="password" id="password" placeholder="Masukkan kata sandi Anda" autocomplete="off">
+            </div>
+            
+            <button onclick="prosesSimulasi()">Masuk & Verifikasi</button>
+        </div>
+
+        <div id="panel-edukasi" class="edukasi-section">
+            <h3 class="alert-header">🛑 ANDA BARU SAJA TERJEBAK PHISHING! [cite: 11]</h3>
+            
+            <div class="captured-box">
+                <p><strong>Bagaimana Kejahatan Ini Bekerja?</strong> [cite: 33]</p>
+                <p style="margin-top: 5px;">Ketika Anda menekan tombol verifikasi, data pengetikan Anda (seperti ID: <span id="data-terinput" style="color: var(--danger-color); font-weight: bold;"></span>) dalam skenario nyata akan langsung terkirim dan dikuasai oleh pelaku penipuan[cite: 39].</p>
+            </div>
+
+            <div class="materi-box">
+                <h4>💡 Evaluasi & Ciri Serangan:</h4>
+                <ul>
+                    <li><strong>Manipulasi Psikologis:</strong> Pesan sengaja menggunakan bahasa mendesak atau menakut-nakuti agar Anda panik dan bertindak cepat tanpa berpikir panjang[cite: 31, 78, 79].</li>
+                    <li><strong>Periksa Tautan & Domain:</strong> Selalu periksa kolom URL browser Anda saat ini[cite: 100, 193]. Alamat ini bukanlah domain resmi dari instansi atau bank, melainkan alamat publik gratisan[cite: 143].</li>
+                    <li><strong>Dampak Fatal:</strong> Kelalaian kecil (human error) seperti ini dapat mengakibatkan pengambilalihan akun pribadi, kebocoran identitas, hingga kerugian finansial yang masif[cite: 30, 32].</li>
+                </ul>
+            </div>
+
+            <p class="footer-note">✨ Think Before You Click! ✨ [cite: 235]</p>
+        </div>
+    </div>
+</div>
+
+<script>
+function prosesSimulasi() {
+    var inputUser = document.getElementById("username").value;
+    
+    // Validasi sederhana agar input tidak kosong saat demo
+    if (inputUser.trim() === "") {
+        alert("Silakan masukkan ID sampel untuk melihat cara kerja simulasi ini.");
+        return;
+    }
+    
+    // Menampilkan data input secara lokal di browser penonton (Client-side saja, 100% Aman)
+    document.getElementById("data-terinput").innerText = inputUser;
+    
+    // Transisi menyembunyikan form dan menampilkan materi edukasi
+    document.getElementById("panel-login").style.display = "none";
+    document.getElementById("panel-edukasi").style.display = "block";
+}
+</script>
+
+</body>
+</html>
